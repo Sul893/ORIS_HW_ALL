@@ -1,0 +1,101 @@
+body{
+    background-image: url(../materials/night-starry-sky-high-resolution-photo_361360-1219.jpg);
+}
+
+.content{
+    margin-top: 100px;
+    width: 56vw;
+    height: 90vh;
+    background-color: #293a94;
+    margin-left: 22vw;
+}
+
+#cover{
+    height: 300px;
+    width: 56vw;
+}
+
+#name{
+    font-size: 40px;
+    color: #B2E6EB;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+#avatar{
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+    margin-left: 20px;
+    margin-top: -30px;
+    box-shadow: 0px 0px 10px 3px #ffffff;
+}
+
+.description{
+    margin-left: 200px;
+    margin-top: -150px;
+    width: 40vw;
+    height: 150px;
+    box-shadow: 0px 0px 10px 3px #ffffff;
+    position: absolute;
+}
+
+#desc{
+    color:#B2E6EB;
+    margin-left: 10px;
+}
+
+.navigation{
+    box-shadow: 0px 0px 10px 3px #ffffff;
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 80px;
+}
+
+.nav-button{
+    width: 80px;
+    height: 30px;
+
+    color: #B2E6EB;
+    border: none;
+    margin-top: 5px;
+    cursor: pointer;
+}
+#intro{
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    opacity: 100%;
+    visibility: visible;
+    position: absolute;
+    margin-top: -100px;
+}
+
+.star{
+    position: absolute;
+    width: 150px;
+    height:150px;
+}
+
+#star1{
+    opacity: 100%;
+    visibility: visible;
+}
+#star2{
+    opacity: 0%;
+    visibility: hidden;
+
+}
+#star3{
+    opacity: 0%;
+    visibility: hidden;
+
+}
+
+#main1{
+    float:right;
+    margin-right: 108px;
+    margin-top: 10px;
+    border-radius: 10px;
+}

@@ -1,0 +1,137 @@
+.intro{
+    height: 100vh;
+    z-index: 1000;
+    position: absolute;
+    opacity: 100%;
+    visibility: visible;
+    width: 60vw;
+    margin-left: 20vw;
+}
+
+#intro{
+    position: fixed;
+    top: 0;
+
+    visibility: visible;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000; 
+    margin: 0; 
+
+}
+
+#bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 100%;
+    visibility: visible;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body{
+    background-color: rgb(0, 0, 12); 
+    margin: 0; 
+    overflow-x: hidden; 
+}
+
+.container{
+    width: 60vw;
+    height: 90vh;
+    margin-top: 10vh;
+    margin-left: 20vw;
+    background-color: rgba(4, 4, 65, 0.8);
+    border-radius: 25px;
+    text-align: center;
+    position: relative;
+    border: 5px solid rgb(79, 0, 139);
+    box-shadow: 0 0 70px rgb(79, 0, 139);
+}
+
+.container h1{
+    text-shadow: 0 0 10px cyan;
+    color: white;
+    padding-top: 5vh;
+    font-size: 3em;
+    font-family: "GameFont";
+    margin: 0; 
+}
+
+@font-face {
+    font-family: 'GameFont';
+    src: url(../../materials/GameFont.otf);
+}
+
+.neon-wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+#neon-wrapper-left {
+    left: -17vw;
+}
+
+#neon-wrapper-right {
+    right: -17vw;
+}
+
+#neon1, #neon2 {
+    position: relative;
+    width: 3vw;
+    height: 90vh; 
+    object-fit: cover; 
+    z-index: 2;
+    filter: drop-shadow(0 0px 50px cyan);
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4vh;
+    height: 60vh;
+    margin-top: 5vh;
+}
+
+.button {
+    color: white;
+    font-family: "GameFont";
+    font-size: 2em;
+    padding: 20px 40px;
+    background-color: rgba(79, 0, 139, 0.3);
+    border: 3px solid rgb(79, 0, 139);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-shadow: 0 0 10px cyan;
+    box-shadow: 0 0 20px rgba(79, 0, 139, 0.5);
+    width: 300px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: rgba(79, 0, 139, 0.6);
+    box-shadow: 0 0 30px cyan;
+    border-color: cyan;
+    transform: scale(1.05);
+    text-shadow: 0 0 15px cyan;
+}
+
+.button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+a {
+    text-decoration: none;
+}

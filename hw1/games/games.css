@@ -1,0 +1,118 @@
+body{
+    background-image: url(../materials/games_bg.jpg);
+}
+
+.container{
+    margin-top: 100px;
+    width: 56vw;
+
+    background-color: #1c1c1c;
+    margin-left: 22vw;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 3px #000000;
+}
+
+
+@font-face{
+    font-family:gamer;
+    src: url(..//materials/KnightWarrior-w16n8.otf)
+}
+@font-face {
+    font-family: blood;
+    src: url(../materials/bloody-font.ttf);
+}
+
+h1{
+    font-family: gamer;
+    color: #848484;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 50px;
+}
+
+#l{
+    color: white;
+    text-align: center;
+}
+
+.info{
+    position:absolute;
+    box-shadow: 0px 0px 10px 3px #ffffff;
+    width: 200px;
+    height: 300px;
+    margin-left: 100px;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.info p{
+    color: white;
+    font-size: 16px;
+ 
+}
+
+.info #hell{
+    font-family: blood;
+    color: red;
+    font-size: 30px;
+
+}
+
+
+.honor{
+    box-shadow: 0px 0px 10px 3px #ffffff;
+    width: 200px;
+    height: 300px;
+    margin-top: 50px;
+    padding: 10px;
+    color: white;
+    float: right;
+    margin-right: 100px;
+}
+.games{
+    margin-top: 500px;
+}
+.game{
+    box-shadow: 0px 0px 10px 3px #000000;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+.game img{
+    max-width: 100%;
+    width: 60vw;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.game #l4d2{
+    font-family: blood;
+    color: rgb(195, 5, 5);
+    font-size: 50px;
+    text-align: center;
+}
+
+.game p{
+    padding: 10px;
+    color: white;
+}
+
+.game #bf5{
+    text-align: center;
+
+}
+
+.game #civ6{
+    text-align: center;
+}
+
+#intro{
+    width:100vw;
+    height:100vh;
+    z-index:1000;
+    position: absolute;
+    opacity: 100%;
+    visibility: visible;
+    margin-top: -100px;
+}

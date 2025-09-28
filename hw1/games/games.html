@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="stylesheet" href="games.css">
+    <link rel="stylesheet" href="../googoogaga.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('backgroundMusic');
+
+            const playPromise = audio.play();
+
+            const startPlayback = function() {
+                audio.play()
+            };
+
+            document.addEventListener('click', startPlayback);
+
+            const intro = document.getElementById("intro")
+            let i=100
+            setTimeout(()=>{
+                if(intro){
+                    setInterval(()=>{
+                        if(i>0){
+                            i-=1;
+                            intro.style.opacity=`${i/100}`;
+                        }
+                        if(i==0){
+                            intro.style.visibility="hidden";
+                        }
+                    },10)
+                }
+            },4500)
+        });
+    </script>
+</head>
+<body>
+    <img id="intro" src="../materials/intro2.gif">
+    <div class="container">
+        <header>
+            <a href="../main/main.html">Главная</a>
+            <a href="../music/music.html" class="nav-button">Музыка</a>
+            <a href="../games/games.html" class="nav-button">Игры</a>
+            <a href="../series/series.html" class="nav-button">Сериалы</a>
+            <a href="https://shattereddisk.github.io/rickroll/rickroll.mp4" class="nav-button">Контакты</a>
+
+        </header>
+        <h1>Welcome to the games page!</h1>
+        <p id="l">Тут я кратко написал про игры в которые я люблю играть больше всего! Впринципе только в них и играю...</p>
+            
+        <div class="info">
+            <p>Ну вообще из жанров я в основном люблю стратерии/рубилово/шутеры да впринципе если игра заставит меня сказать </p> <p id="hell">HELL YEAH!!! </p> <p> то она попадет в этот список.</p>
+        </div>
+
+        <div class="honor">
+            <h2>Достойные упоминания:</h2>
+            <ul>
+                <li>ULTRAKILL</li>
+                <u>Minecraft</u>
+                <s>Dota2</s>
+                <strong>DRG</strong>
+                <li>Night Runners</li>
+                <sub>Lethal Company</sub>   
+                <!-- новый тег -->
+            </ul>
+        </div>
+        <p class="games"></p>
+
+        <div class="game">
+            <img src="../materials/l4d21.jpg">
+            <p id="l4d2">LEFT 4 DEAD 2</p>
+            <p>В эту игру я начал играть наверное в классe седьмом, когда мне посоветовал ее
+                друг. По началу все было прикольно и игра ощущалась как прикольный шутер.
+                Но когда я взял в руки бензопилу... >:D Я втянулся в игру по полной.
+                Потом забросил ее на пару лет, но год назад вспомнил и решил сыграть снова.
+                Сейчас хочу получить все ачивки которые можно получить в этой игре.
+                Особенно мне нравится режим "Выживание", бесконечное рубилово под жеский металл.
+                Это я еще про моды говорить не начал, совсем меняют геймплей. Без них теперь играть не могу
+                (NSFW моды я не ставил). 
+            </p>
+        </div>
+
+        <div class="game">
+            <img src="../materials/photo_2025-09-18_22-55-26.jpg">
+            <p id="bf5">BATTLEFIELD V</p>
+            <p>В эту игру начал играть недавно. Хотя знал о ней довольно долгое время.
+                четсно говоря не думал что мне она так сильно понравится. Но с первых секунд гейплея
+                я понял что это именно то, чего я хотел и о чем я даже не подозревал. 
+                Мне не передать этих ощущений когда бежишь по полю боя, вокруг взрывы, самолеты, техника,
+                еще и союзники рядом. для меня это 100% HELL YEAH симулятор.
+            </p>
+        </div>
+
+        <div class="game">
+            <img src="../materials/civ.jpg">
+            <p id="civ6">CIVILIZATION VI</p>
+            <p>Ну тут и говорить нечего, лучшая стратегия</p>
+            <p>Кстати, если захочешь поиграть - пиши, мы как раз игроков набираем. (ключ к игре можно купить за 300 рублей)</p>
+        </div>
+        <audio id="backgroundMusic" loop>
+            <source src="../materials/l4d2.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+</body>
+</html>

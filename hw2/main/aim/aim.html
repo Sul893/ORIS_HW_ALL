@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aim</title>
+    <link rel="stylesheet" href="./aim.css">
+    <script>
+        //и почему я пошел на андроид вместо фронта...
+        //нейронки стралася не использовать, разве что если что-то ломалось и я не знал как починить
+        var i = 0;
+        var score = 0;
+        var maxScore = 0;
+        var timer;
+        var timeLeft = 30;
+        var gameStarted = false;
+        
+        function create(){
+            console.log("сработало1")
+            var div = document.createElement('div');
+            i++;
+            div.className = "shoot";
+            div.id = i.toString();
+            var img = document.createElement('img');
+            img.className = "shoot1"
+            img.src="../../materials/shoot.png";
+            div.appendChild(img)
+            var shootingRange = document.querySelector('.shooting_range');
+
+
+            const rnLeft = Math.floor(Math.random() * 80) + 5; 
+            const rnTop = Math.floor(Math.random() * 80) + 5;  
+            
+           
+            div.style.left = rnLeft + '%';
+            div.style.top = rnTop + '%';
+            
+
+            div.addEventListener("click", function() {
+                del(this.id);
+                create();
+                
+            });
+            
+            shootingRange.appendChild(div);
+        }
+
+        function del(k){
+            score++;
+            updateScore();
+            var element = document.getElementById(k);
+            console.log("сработало2")
+            if(element) {
+                element.remove();
+            }
+        }
+
+        function updateScore() {
+            var scoreElement = document.getElementById('score');
+            if (scoreElement) {
+                scoreElement.innerHTML = "SCORE: " + score;
+            }
+        }
+
+        function updateTimer() {
+            var timerElement = document.getElementById('timer');
+            if (timerElement) {
+                timerElement.innerHTML = "TIME: " + timeLeft;
+            }
+        }
+
+        function startGame() {
+            if (gameStarted) return;
+            console.log("ПРОВЕРКА !111")
+            gameStarted = true;
+            score = 0;
+            timeLeft = 30;
+            
+            var scoreElement = document.getElementById('score');
+            if (!scoreElement) {
+                scoreElement = document.createElement("h1");
+                scoreElement.id = "score";
+                document.querySelector('.container').insertBefore(scoreElement, document.querySelector('.shooting_range'));
+            }
+            
+            var timerElement = document.getElementById('timer');
+            if (!timerElement) {
+                timerElement = document.createElement("h2");
+                timerElement.id = "timer";
+                document.querySelector('.container').insertBefore(timerElement, document.querySelector('.shooting_range'));
+            }
+            
+            updateScore();
+            updateTimer();
+            
+            var shootingRange = document.querySelector('.shooting_range');
+            shootingRange.innerHTML = '';
+            
+            timer = setInterval(function() {
+                timeLeft--;
+                updateTimer();
+                
+                if (timeLeft <= 0) {
+                    endGame();
+                }
+            }, 1000);
+            
+            create();
+        }
+
+        function endGame() {
+            clearInterval(timer);
+            console.log("ПРОВЕРКА")
+            gameStarted = false;
+            
+            if (score > maxScore) {
+                maxScore = score;
+            }
+            var resultElement = document.getElementById('result');
+            if (!resultElement) {
+                resultElement = document.createElement("h2");
+                resultElement.id = "result";
+                resultElement.style.color = "cyan";
+                document.querySelector('.container').appendChild(resultElement);
+            }
+            
+            resultElement.innerHTML = "GAME OVER!<br>Final Score: " + score + "<br>Best Score: " + maxScore;
+            
+            var shootingRange = document.querySelector('.shooting_range');
+            shootingRange.innerHTML = '';
+            
+            var btn = document.querySelector('.btn');
+            btn.innerHTML = "Play Again";
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var shootingRange = document.querySelector('.shooting_range');
+            shootingRange.addEventListener('click', function(e) {
+                if (e.target === shootingRange && gameStarted) {
+                    score--;
+                    updateScore();
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function(){
+            
+            console.log("сработало3")
+            var btn = document.querySelector(".btn");
+            btn.addEventListener("click", function() {
+                var aud= document.querySelector("audio")
+                aud.play()
+                console.log("сработало4")
+                if (!gameStarted) {
+                    startGame();
+                }
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <img src="../../materials/Rollover.gif" id="bg">
+    <div class="container">
+        
+        <div class="button">
+            <a href="#" class="btn">Start</a>
+        </div>
+        <div class="shooting_range"></div>
+       
+    </div>
+    <img class="jacket" src="../../materials/Jacket pixel animation.gif">
+    <audio src="../../materials/Illuminate - Silent Screamer [dBKNJF3YhPw]_[cut_319sec].mp3"></audio>
+</body>
+</html>

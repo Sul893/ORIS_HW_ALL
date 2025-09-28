@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const intro = document.getElementById("intro");
+            const introImage = document.querySelector(".intro"); 
+            let i = 100;
+            
+           
+            setTimeout(() => {
+                const interval = setInterval(() => {
+                    if (i <= 0) {
+                        intro.style.visibility = "hidden";
+                        introImage.style.visibility = "hidden";
+                        intro.style.zIndex = "-1"; 
+                        introImage.style.zIndex = "-1"; 
+                        clearInterval(interval); 
+                    } else {
+                        intro.style.opacity = i/100;
+                        introImage.style.opacity = i/100;
+                        i--;
+                    }
+                }, 15);   
+                
+            }, 1500);
+        });
+    </script>
+</head>
+<body>
+    <img src="../../materials/mainBg.jpg" id="bg">
+    <div id="intro">
+        <img class="intro" src="../../materials/intro1.gif" alt="Intro animation">
+    </div>
+    
+    <div class="container">
+        <div class="neon-wrapper" id="neon-wrapper-left">
+            <img src="../../materials/neonlight1.png" id="neon1" alt="Left neon light">
+        </div>
+        <div class="neon-wrapper" id="neon-wrapper-right">
+            <img src="../../materials/neonlight1.png" id="neon2" alt="Right neon light">
+        </div>
+        
+        <h1>Select <br> the <br> game</h1>
+        <div class="select">
+            <a href="../aim/aim.html"><div class="button">Aim Trainer</div></a>
+            <a href="../pinpong/pinpong.html"><div class="button">Ping-Pong Game</div></a>
+            <a href="../reaction/reaction.html"><div class="button">Reaction Scaller</div></a>
+             <a href="../hw/hw.html"><div class="button">Homework требования</div></a>
+        </div>
+    </div>
+   
+</body>
+</html>

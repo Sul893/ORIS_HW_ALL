@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="../googoogaga.css">
+    <script>
+     document.addEventListener('DOMContentLoaded', function() {
+          const audio = document.getElementById('backgroundMusic');
+
+          const playPromise = audio.play();
+
+          const startPlayback = function() {
+               audio.play()
+          };
+
+
+
+          const intro = document.getElementById("intro").style
+          let i=100
+          if(intro){
+                    setTimeout(()=>{
+                         setInterval(()=>{
+                              if(i>0){
+                                   i-=1;
+                                   intro.opacity=`${i/100}`
+                              }
+                              if(i===0){
+                                   intro.visibility="hidden"
+                              }
+                         })
+                    },2000)
+          }
+
+          const star1 = document.getElementById("star1");
+          const star2 = document.getElementById("star2");
+          const star3 = document.getElementById("star3");
+
+          star2.addEventListener('click',startPlayback)
+
+          let k = 100;
+          let j = 0;
+          let intervalIn;
+          let intervalOut;
+
+          if (star1 && star2) {
+               star1.addEventListener("mouseover", () => {
+               
+                    clearInterval(intervalIn);
+                    clearInterval(intervalOut);
+                    
+                    k = 100;
+                    j = 0;
+                    star2.style.visibility = "visible";
+                    star1.style.visibility = "visible";
+                    
+                    intervalIn = setInterval(() => {
+                         if (k > 0) {
+                              k -= 1;
+                              star1.style.opacity = `${k/100}`;
+                              j += 1;
+                              star2.style.opacity = `${j/100}`;
+                         } else {
+                              clearInterval(intervalIn);
+                              star1.style.visibility = "hidden";
+                         }
+                    }, 10); 
+               });
+
+               star2.addEventListener("mouseout", () => {
+                    
+                    clearInterval(intervalIn);
+                    clearInterval(intervalOut);
+                    
+                    k = 0;
+                    j = 100;
+                    star1.style.visibility = "visible";
+                    star2.style.visibility = "visible";
+                    
+                    intervalOut = setInterval(() => {
+                         if (j > 0) {
+                              k += 1;
+                              star1.style.opacity = `${k/100}`;
+                              j -= 1;
+                              star2.style.opacity = `${j/100}`;
+                         } else {
+                              clearInterval(intervalOut);
+                              star2.style.visibility = "hidden";
+                         }
+                    }, 10); 
+               });
+          }
+
+     });
+ </script>
+</head>
+<body>
+     <img id="intro" src="../materials/intro0.gif">
+    <div class="main">
+     
+
+          <img class="star" id="star1" src="../materials/img1.png"> 
+          <img class="star" id="star2" src="../materials/img2.png">
+          <img class="star" id="star3" src="../materials/img3.png">
+        <div class="content">
+           <div class="cover">
+                <img src="../materials/cover (2).jpg" id="cover"> 
+           </div>
+           <div class="profile">
+                <p id="name">Sultan</p>
+                <img src="../materials/avatar.jpg" id = avatar>
+           </div>
+           <div class ="description">
+                <p id="desc">Привет и добро пожаловать! Этот сайт я давно хотел написать на https://spacehey.com но что-то было лень. а теперь это дз и есть возможноть покреативить. вообще я раньше писал сайты небольшие на js с использованием react. самый большо проект наверное делал год назад, но забросил из-за учебы. да и не важно в принципе, закончу потом как-нибудь. ниже будут всякие странички про меня: музыка, игры, увлечения и еще наверное что-нибудь закину.</p>
+           </div>
+           <img id="main1" src="../materials/main1.gif">
+           <div class="navigation">
+                <a href="../main/main.html">Главная</a>
+                <a href="../music/music.html" class="nav-button">Музыка</a>
+                <a href="../games/games.html" class="nav-button">Игры</a>
+                <a href="../series/series.html" class="nav-button">Сериалы</a>
+                <a href="https://shattereddisk.github.io/rickroll/rickroll.mp4" class="nav-button">Контакты</a>
+           </div>
+        </div>
+        <audio id="backgroundMusic" loop>
+          <source src="../materials/Nujabes_-_Letter_from_Yokosuka_(mp3.pm).mp3" type="audio/mpeg">
+          </audio>
+
+    </div>
+</body>
+</html>

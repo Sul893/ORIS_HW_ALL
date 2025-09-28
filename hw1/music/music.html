@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="./music.css">
+    <link rel="stylesheet" href="../googoogaga.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('backgroundMusic');
+
+            const playPromise = audio.play();
+
+            const startPlayback = function() {
+                audio.play()
+            };
+
+            document.addEventListener('click', startPlayback);
+            const gif = document.getElementById("intro");
+            let i = 100;
+
+            setTimeout(() => {
+                if(gif){
+                    setInterval(() => {
+                        if(i > 0){
+                            i--;
+                            gif.style.opacity = `${i/100}`;
+                        }
+                        if(i==0){
+                            gif.style.visibility="hidden";
+                        }
+                    }, 5);
+                    
+                }
+                
+            }, 3000);
+
+        })
+    </script>
+</head>
+<body>
+
+    <img id ="intro" src="../materials/intro.gif">
+
+    <header>
+            <a href="../main/main.html">Главная</a>
+            <a href="../music/music.html" class="nav-button">Музыка</a>
+            <a href="../games/games.html" class="nav-button">Игры</a>
+            <a href="../series/series.html" class="nav-button">Сериалы</a>
+            <a href="https://shattereddisk.github.io/rickroll/rickroll.mp4" class="nav-button">Контакты</a>
+
+    </header>
+    <div class="container">
+        <img id="blood-stain" src="../materials/blood1.png">
+
+        <p id="name">MUSIC</p>
+        <div class="image-container">  
+            <img class="gif" src="https://i.pinimg.com/originals/96/2e/bf/962ebfa1d3757c9cbcfe03fac888e12a.gif" alt="GIF"/>
+        </div>
+        <div class="blinkies">
+            <img class="blink" src= "https://dl.glitter-graphics.com/pub/2847/2847088geb77lfhwx.gif" alt="music">
+            <img class="blink" src="https://64.media.tumblr.com/758a7bd4ab3c6a3fef326033fe85a58d/db7f482dfcc9276f-c8/s250x400/9b7d21401ac4076d1040ac43f0de399212f2b77e.gifv" alt="music">
+            <img class="blink" src="https://64.media.tumblr.com/7cc67c55ad51e049b7acf949ae83c90a/db7f482dfcc9276f-cd/s250x400/68cf4f446ffaa6fa66f7b7430be987182e1fcdfb.gifv" alt="">
+            <img class="blink" src="https://adriansblinkiecollection.neocities.org/b5.gif" alt="">
+            <img class="blink" src="https://adriansblinkiecollection.neocities.org/x39.gif" alt="">
+            <img class="blink" src="https://adriansblinkiecollection.neocities.org/y58.gif" alt="">
+            <img class="blink" src="https://adriansblinkiecollection.neocities.org/z2.gif">
+        </div>
+       
+        <div class="text">
+            <p>Вообще я не особо фанатею от металла. вернее мне нравится это слушать, но другие жанры/исполнителей я слушаю не меньше. В основном я случаю ДнБ, джазз, латинский поп(?), хаус музыку, джазз-хаус, и многие другие жанры понемногу. но лично у меня в сердце особое место занимает Jun Seba (Nujabes), не могу полностью объяснить почему, очень много факторов. Кстати именно обложка его альбома красуется на главной странице. Эту страницу решил оформить в виде такого металлическо-кровавого стиля, просто потому что захотел >:]. </p>
+        </div>
+
+        <div class="content">
+            <div class="elem">
+                <img class="cont-img" src="https://i.pinimg.com/originals/52/04/fe/5204fe5cd015bddced6249860180dc35.gif">
+                <p class="name">Linkin Park</p>
+                <p class="desc">Наверное первая банда которую я начал слушать. Наверное вторая для меня по значимости после Джуна Сэбы. честно говоря мне нравятся не все альбомы этой группы, в основном нравятся их самые хитовые Meteora и Hybrid Theory. новый состав я уже не слушаю, без Честера совсем не то </p>
+            </div>
+
+            <div class="elem">
+                <img class="cont-img" src="https://media.tenor.com/KEDRLpjlpEAAAAAM/disturbed-warrior.gif">
+                <p class="name">Disturbed</p>
+                <p class="desc">Тоже одна из любимых банд, прикольно послушать, не сильно бьет по ушам и можно слушать +- спокойно. Хорошо подходит под зал, если не хочется убиваться.</p>
+        
+            </div>
+
+            <div class="elem">
+                <img class="cont-img" src="https://i.makeagif.com/media/2-25-2023/SHR0Fk.gif">
+                <p class="name">Nonpoint</p>
+                <p class="desc">Еще одна группа, которая мне нравится. Обычно включаю под L4D2 и мочу зомбей бензопилой, думаю не нужно объяснять наколько это кайфово.</p>
+            </div>
+            <audio id="backgroundMusic" loop>
+                <source src="../materials/DF.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</body>
+</html>

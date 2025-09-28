@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="series.css">
+    <link rel="stylesheet" href="../googoogaga.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('backgroundMusic');
+
+            const playPromise = audio.play();
+
+            const startPlayback = function() {
+                audio.play()
+            };
+            const disk = document.getElementById("disk");
+            function rotate(){
+                setTimeout(()=>{
+                    if (disk) {
+                        let i = 0;
+                        setInterval(() => {
+                            i += 1;
+                            if (i >= 360) i = 0;
+                            disk.style.transform = `rotate(${i}deg)`;
+                        }, 20);
+                    }
+                },1000)
+            }
+            if(disk){
+                disk.addEventListener('click', startPlayback);
+                disk.addEventListener('click', rotate);
+            }
+            
+            const intro = document.getElementById("intro")
+            let i=100;
+            setTimeout(()=>{
+                if(intro){
+                    setInterval(()=>{
+                        if(i>0){
+                            i-=1;
+                            intro.style.opacity=`${i/100}`
+                        }
+                        if(i===0){
+                            intro.style.visibility="hidden"
+                        }
+                    },10)
+                }
+            },1500)
+
+        });
+        
+        
+    </script>
+</head>
+<body>
+    <img id="intro" src="../materials/Sam6.gif">
+    <header>
+        <a href="../main/main.html">Главная</a>
+        <a href="../music/music.html" class="nav-button">Музыка</a>
+        <a href="../games/games.html" class="nav-button">Игры</a>
+        <a href="../series/series.html" class="nav-button">Сериалы</a>
+        <a href="https://shattereddisk.github.io/rickroll/rickroll.mp4" class="nav-button">Контакты</a>
+    </header>
+    <div class="disk">
+        <img id="disk" src="../materials/sm1.png">
+    </div>
+    <div class="SC">
+        
+        <div class="content">
+            <p id="SamChamp">Samurai Champloo</p>
+            
+
+            <div class="info">
+                <p id="a">
+                    Сюжет
+                </p>
+                <p id="b">Это история о трех совершенно разных людях, которых судьба свела вместе. Фуу — милая, но решительная девушка-официантка, которая ищет "самурая, пахнущего подсолнухами". Чтобы найти его, она нанимает двух совершенно безумных мечников: молчаливого и спокойного Дзина и дикого, непредсказуемого Мугена.</p>
+                <p id="b">Вместе они путешествуют по феодальной Японии, но какой! Это не та историческая Япония, что мы знаем из учебников. Здесь самураи слушают хип-хоп, встречаются граффити на древних стенах, а битбокс вплетается в звучание традиционных инструментов.</p>
+            </div>
+
+            <div class="char">
+                <h2>
+                    Главные герои
+                </h2>
+                <div class="character">
+                    <img src="../materials/mugen.jpeg" class="pfp">
+                    <div class="desc">
+                        <h3>Mugen</h3>
+                        <p>
+                        Безбашенный тип, постоянно ищет проблемы и живет законом YOLO, каждый день он проживает как последний. Его стиль — это дикая смесь брейкданса, капоэйры, уличной драки и владения мечом. Выросший среди пиратов, он абсолютно не признает правил и авторитетов. Всегда ищет сильных противников, чтобы доказать свое превосходство.
+                        </p>
+                    </div>
+                    
+                </div>
+
+                <div class="character">
+                    <img src="../materials/jin.jpeg" class="pfp">
+                    <div class="desc">
+                        <h3>Jin</h3>
+                        <p>
+                            Полная противоположность Мугену. Молчаливый, вежливый, традиционный самурай с безупречной техникой. Изгнанный из своей школы за убийство собственного учителя (были на то причины!), он теперь скитается в одиночестве. Его стиль боя — это точность и эффективность, без лишних движений. Не знаю почему, но действия и характер этого персонажа я понимаю лучше всего, это странно. 
+                        </p>
+                    </div>
+                </div>
+
+                <div class="character">
+                    <img src="../materials/fuu.jpeg" class="pfp">
+                    <div class="desc">
+                        <h3>Fuu</h3>
+                        <p>
+                            Та самая девушка, что собрала эту безумную компанию. Может показаться наивной, но на самом деле она очень решительная и хитрая. Именно ее желание найти "самурая, пахнущего подсолнухами" движет всем сюжетом. Умеет манипулировать нашими героями, но в то же время искренне заботится о них.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="after">
+                <div class="gif">
+                    <img class="f" src="../materials/Sam1.gif">
+                    <p>С этим шедевром японской анимации я познакомился не так давно, года 2-3 назад примерно. Я бы не сказал что я фанат аниме, смотрю довольно редко, но раньше увлекался. Впервые встретил Самурая Чамплу на ютубе, очень понравилось как нарисованы экшен-сцены. Но это наверное меньшее за что я полюбил этот сериал</p>
+                </div>
+                <div class="gif">
+                    <img class="s" src="../materials/Sam2.gif">
+                    <p>
+                        Больше всего мне понравилась общая атмосфера, юмор, история да и в принципе все остальное. Стиль этого аниме шикарен, смесь японской и американских культур. Особенно надо выделить цвета, они как-то передают настроение сцены что ли. Каждая сцена имеет свое собственное настроение и передает его через цвет: вспышки неонового красного во время боя, меланхоличные синие тени ночных сцена, кислотно-желтые пустыни передающие ощущение одиночества и бесконечного пути.
+                    </p>
+                </div>
+                <div class="gif">
+                    <img class="t" src="../materials/Sam4.gif">
+                    <p>
+                        Я долго не понимал что именно меня так тянет в этом сериале. И как-то листая ленту на ютубе решил послушать aruarian dance. Тогда это была мемная песня из тик тока которая мне почему-то понравилась. И тут пазл сложился. Написал песню Nujabes - ныне мой любимый и самый прослушиваемый исполнитель. Как оказалось он писал саундтреки для Самурая Чамплу, я начал слушать больше и понял почему мне так понравился сериал. Забавно и то, что он до этого мне на яндекс музыке и мне нравились его треки, просто ленился узнать исполнителя
+                    </p>
+                </div>
+            </div>
+            <audio id="backgroundMusic" loop>
+                <source src="../materials/Nujabes_feat.Shing02_-_Battlecry_OST-Champloo_Samurai_(SkySound.cc).mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+</body>
+</html>
