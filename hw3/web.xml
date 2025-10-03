@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <servlet>
+        <servlet-name>UserRegistrationServlet</servlet-name>
+        <servlet-class>UserRegistrationServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>UserRegistrationServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+</web-app>
